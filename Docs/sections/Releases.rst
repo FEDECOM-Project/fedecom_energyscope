@@ -1,6 +1,5 @@
 Releases
 ++++++++
-.. _sec_releases:
 
 How to cite
 ===========
@@ -11,7 +10,7 @@ You may cite it as follows:
 * [1], for general reference to the EnergyScope project and the EnergyScope modeling framework :cite:`Limpens2019`
 * [2], for reference to the origins of the EnergyScope project or to the first online version of the calculator energyscope.ch :cite:`Girones2015`
 * [3], for reference to the energyscope MILP modeling framework :cite:`Moret2016`
-* [4], for reference to the current code :cite:`Limpens2021thesis`
+* [4], for reference to the current code :cite:`limpens2021generating`
 
 
 [1] G. Limpens, S . Moret, H. Jeanmart, F. Maréchal (2019). EnergyScope TD: a novel open-source model for regional energy systems and its application to the case of Switzerland. https://doi.org/10.1016/j.apenergy.2019.113729	
@@ -23,11 +22,10 @@ You may cite it as follows:
 [4] G. Limpens (2021). Generating energy transition pathways: application to Belgium. PhD thesis Université Catholique de Louvain. http://hdl.handle.net/2078.1/249196
 
 
-You are welcome to report any bugs related to the code or documentation to the following:
-by submitting an issue on the github repository.
-
-You can also contact us:
+You are welcome to report any bugs related to the code to the following:
 moret.stefano@gmail.com or gauthierLimpens@gmail.com
+
+Or by submitting an issue on the github repository.
 
 License
 =======
@@ -45,8 +43,6 @@ Codes versions
 - first release (v1, monthly MILP) of the EnergyScope (ES) model: https://github.com/energyscope/EnergyScope/tree/v1.0 . See :cite:t:`Moret2017PhDThesis`.
 - second release (v2, hourly LP) of the EnergyScope (ES) model: https://github.com/energyscope/EnergyScope/tree/v2.0 .	See :cite:t:`Limpens2019`.
 - second release with energy system improvment (v2.1 Energy system update) of EnergyScope (ES) model: https://github.com/energyscope/EnergyScope/tree/v2.1 . See :cite:t:`Limpens_belgian_2020`.
-- second release with energy system improvment (v2.2 Energy system update) of EnergyScope (ES) model: https://github.com/energyscope/EnergyScope/tree/v2.2 .
-
 
 Authors: 
 
@@ -55,114 +51,84 @@ Authors:
 - Paolo Thiran, Université catholique de Louvain (Belgium)
 - Xavier Rixhon, Université catholique de Louvain (Belgium)
 
-Model utilisation
-=================
 
-The following describes the different model versions. They are regrouped in three categories:
+Model extensions
+================
 
-- the **model extensions published**
+The EnergyScope TD models account for three published model extension:
 
-- the **model extensions unpublished**
-
-- the **model applications** per country (scenario analaysis and robust optimisation)
-
-
-Model extensions (published)
-----------------------------
-
-The EnergyScope TD models account for two published model extension:
-(name in **bolt** are the active developers)
-
-
-- **Pathway optimisation**: *EnergyScope Pathway* enables optimising the energy system from an existing year (usually 2015)
-  to a future target year. :cite:t:`Limpens2021thesis` developed a model that extended EnergyScope TD into a big linear model representing 8 representative years from 2015 to 2050.
+- Pathway optimisation: *EnergyScope Pathway* enables to optimise the energy system from an existing year (usually 2015) 
+  to a future target year. The model has been extended to a big linear model which represents 8 representative years from 2015 to 2050. 
   The overall transition is optimised at once with a perfect foresight on technology performances (prices, efficiency,...), resources prices, energy demand ...
-  :cite:t:`li2022dynamic` proposed a Conditional multi-stage optimisation that simulates the evolution of energy transitional pathways flexibly in case the evolution diverts from the planned posterior.
   
-  **Main contributors**: **Gauthier Limpens**, Li Xiang, **Xavier Rixhon** see :cite:`Limpens2021thesis,li2022dynamic`
+  **Main contributors**: Gauthier Limpens, see :cite:`limpens2021generating`
 
-- **Multi-region**; *EnergyScope Multi-Cells* allows the representation of several region at once.
-  The regions are resolved simultaneously with the exchanges of several energy carriers (usually electricity, molecules and wood).
-  The new model was first developped by :cite:t:`thiranenergyscope` on a fictive case, then extended to the Western Europe region with a 6-cells resolution, see :cite:t:`cornet2021energy`.
-  It has also been applied in other studies on different regions :cite:`thiran2021flexibility, thiran2023validation`. A European version is currently under development.
+- Multi-regional; *EnergyScope Multi-Cells* allows the representation of several region at once.  
+  The regions are resolved simultaneously with the exchanges of several energy carriers (usually electricity, molecules and wood). 
+  The new model has been first developped by :cite:t:`thiranenergyscope` on a fictive case, then extended to the Western Europe region, see :cite:t:`cornet2021energy`. 
+  It has also been applied in other studies on different regions :cite:`thiran2021flexibility, thiran2023validation`. A European version is currently under development.  
   
-  **Main contributors**: **Paolo Thiran**, see :cite:`thiranenergyscope,cornet2021energy,thiran2021flexibility, thiran2023validation`
-
+  **Main contributors**: Paolo Thiran, see :cite:`thiranenergyscope,cornet2021energy,thiran2021flexibility, thiran2023validation` 
   **Other contributors**: Aurélia Hernandez, Noé Cornet, Pauline Eloy, Jeroen Dommisse, Jean-Louis Tychon.
 
-- **Carbon flow**: Adding mass carbon balance to all technologies, splitting different types of carbon, allowing monitoring of effective emissions, carbon reuse, and sequestration.
-  Two different formulation are proposed, in the present model, :cite:t:`Limpens_belgian_2020` implemented a formulation represented in :numref:`Figure %s <fig:CO2andPtGLayers>` that captures the carbon cycle for synthetic fuels.
-  More exhaustively, :cite:t:`li2020decarbonization` proposed a full carbon flow capturing all the energy-related carbon flow in a national system.
+Applications
+============
 
-  **Main contributors**: Xiang Li and **Gauthier Limpens**, see :cite:`li2020decarbonization,Limpens_belgian_2020`
+The model has been used for:
 
-- **Grid infrastructure**: Splitting and characterisation of the national grid infrastructure by different power levels (electricity, methane and hydrogen).  The problem can optimise the investment in each infrastructure, which opens the competition among small-decentralised system and large scale.
-  Also it allows the possibility to compete different energy carriers grids, such as electricity versus gas.
+- *Uncertainty quantification*:
+  
+    * *Robust optimisation design*: Moret developed a framework to integrate uncertainties in energy models. The framework accounts for uncertainty characterisation, sensitivity analysis and robust optimisation.
+  
+    **Main contributors**: Stefano Moret, see :cite:`Moret2017PhDThesis`.
+    
+    * *Global sensitivity analysis (GSA)*: this allow to identify the critical parameters for the energy transition. As an example, :cite:t:`Moret2017PhDThesis`
+       quantifies how the price of fossil ressources drive the uncertainty. This result was verified for the case of 
+       Belgium and compared to other decision, such as phasing out Nuclear (see studies of :cite:t:`limpens2021generating` and :cite:t:`rixhon2021role`).
+    
+    **Main contributors**: Gauthier Limpens, Xavier Rixhon and Diederik Coppiters, see :cite:`Moret2017PhDThesis,limpens2021generating,rixhon2021role,limpens2020impact`.
 
- **Main contributors**: **Jonas Schnidrig**, see :cite:`schnidrig2023role`
+- *Scenario analysis of the transition*: the model has been applied to study different scenarios of transition for the Swiss (see :cite:`Limpens2019,Limpens_role_2019`) and the Belgian case (see :cite:`Limpens_belgian_2020,limpens2021generating`).
+  The analysis enable to quantify the role of storage technologies (i.e. electricity, heat and molecule storage), 
+  identify the key technologies of the transition or even estimate the cost for each transition option.
+  
+  **Main contributors**: Gauthier Limpens and Stefano Moret, see :cite:`Limpens2019,Limpens_role_2019,Limpens_belgian_2020,limpens2021generating`.
 
-Model extensions (unpublished)
-------------------------------
+- Coupling with a dispatch model; *EnergyScope-DispaSET* soft couples the two models EnergyScope and Dispa-SET. EnergyScope is a Energy System Optimisation (ESO) model while Dispa-SET is a Unit Commitment and Economic Dispatch (UCED) model.
+  :cite:t:`pavivcevic2022bi` proposed a soft linking methods based on the preliminary works of :cite:t:`coates2020energy`
+  The ESO model optimises the design (with limited representation of the operation) while the UCED model optimises the dispatch (i.e. operation). 
+  An iterative loop has been implemented in python. In a first step, the ESO model feeds the design to the UCED model. 
+  In a second step, the UCED model changes constraints in the ESO model by modifying the values of some parameters. 
+  :cite:t:`pavivcevic2022bi` presents the additional constraints needed to couple the ESO and UCED models.
 
-- **Agent based**: is a framework is needed to assess decisions, uncertainties, and shocks.
-  A reinforcement-learning agent interacts with the EnergyScope model, making decisions every five years from 2020 to 2050.
-  Actions taken every five years impact the system for the next ten years, and intermediate solutions serve as starting points
-  for subsequent decisions. By exploring different action sequences, the agent develops a robust sustainability policy,
-  considering environmental parameter variations.
+  **Main contributors**: Pavicevic Matija, Thiran Paolo and Gauthier Limpens, see :cite:`coates2020energy,pavivcevic2022bi`
 
-  **Main contributors**: **Xavier Rixhon**.
-
-- **Multi-criteria**: Use of additional criteria such as Global Warming Potential, embodied energy, etc. :cite:t:`muyldermans2021multicriteria` initiated the work
-  by collecting Life Cycle Assessment (LCA) data for most resources and technologies based on the EcoInvent database.
-  Building on the collected data, :cite:t:`dumas2022energy` analysed the Belgian energy transition using the Energy Return on Investment (EROI) indicator and compared it with cost indicators.
-  Schnidrig built a similar database that integrates and distinguishes Scope 1, 2, and 3 LCA emissions of resources and technologies. In their work, they used a Multi-Objective Optimization technique to analyze the case study of Switzerland (publication forthcoming).
-  In ongoing work, Ghuys and Souttre are improving previous work and are developing an integrated and dynamically adaptive LCA database used in EnergyScope.
-
-  **Main contributors**: Dumas Jonathan,  **Schnidrig Jonas**, **Mathieu Souttre**  and **Ghuys Nicolas**.
-
-  **Other contributors**: Dubois Antoine.
-
-- **Soft coupling with Dispatch model** (`DispaSET <dispaset.eu>`_): this approach was initially introduced in the work of :cite:t:`coates2020energy`, and later extended in the research by :cite:t:`pavivcevic2022bi`.
-  The soft coupling involves an automatic interaction between EnergyScope and DispaSET. EnergyScope optimizes the system design, while DispaSET verifies the operability. This automatic feedback loop enhances the sizing accuracy in EnergyScope to account a stable dispatch, and vice versa.
-
-  **Main contributors**: Matija Pavicevic and Thiran Paolo
-
-- **Soft coupling with Macro-economic model** (`GEMMES <https://www.afd.fr/en/ressources/modelling-small-open-developing-economies-financialized-world-stock-flow-consistent-prototype-growth-model>`_):
-  GEMMES (General Monetary and Multisectoral Macrodynamics for the Ecological Shift) is a macro-economic tool that estimates the impact of public decisions on the economy of a given country. Coupling the models will allow to assess how the energy
-  transition affects the economic environment in which it takes place and vice versa. As an example, deploying additional renewable energies, such as solar and wind, might affect the country's balance of payments, with consequences on the
-  exchange rate and thus possibly on inflation and on the interest rate taken as input by EnergyScope.
+- Coupling with an economic model; *EnergyScope-GEMMES* couples the models EnergyScope 
+  and `GEMMES <https://www.afd.fr/en/ressources/modelling-small-open-developing-economies-financialized-world-stock-flow-consistent-prototype-growth-model>`_. 
+  (This work is undergoing and no peer-reviewed publication is available yet.) GEMMES (General Monetary and Multisectoral Macrodynamics for the Ecological Shift) 
+  is a macro-economic tool that estimates the impact of public decisions on the real and financial spheres of an open emerging economy with an open capital account 
+  and a flexible exchange rate. Coupling the two models will allow us to anticipate the macro-economic consequences of the energy transition and to revise the 
+  transition plans accordingly. Namely, the energy transition will have a major impact on the balance of payments of the country, which will be positive or 
+  negative depending on whether this country is currently a net importer or exporter of fossil fuels. EnergyScope-GEMMES will be applied to both types of countries.
 
   **Main contributors**: Pierre Jacques, see :cite:`godin2020modelling`
 
-- **Soft coupling with district energy models** (REHO): The integration of REHO into the system allows for enhanced accuracy at the building level by effectively capturing the energy demand of buildings. Additionally, REHO facilitates the reconciliation between national estimations of energy hubs (such as district heating networks and energy communities) and their actual implementation.
-  This work is under development, see :cite:`chuat2023impact`
-
-  **Main contributors**: Schnidrig Jonas and Chuat Arthur
-
-- **Soft coupling with industry model**: The integration of industry into the system involves the incorporation of industrial prosumer configurations based
-  on the results of the AIDRES project. This approach entails replacing the energy demands of the industry with the production capacity offered by the industry.
-  In simpler terms, it means that the terawatt-hours (TWh) of heat or electricity traditionally consumed by the industry will be replaced by kilo-tons of materials required for production.
-
-  **Main contributors**: Schnidrig Jonas
-
-Model Applications
-------------------
+Case studies
+============
 
 The model has been applied to the following countries:
 
 - Switzerland:
   
-    * *Robust optimisation design*: Moret developed a framework to integrate uncertainties in energy models. The framework accounts for uncertainty characterisation, sensitivity analysis and robust optimisation. See :cite:t:`Moret2017PhDThesis`.
+    * *Uncertainty*: :cite:t:`Moret2017PhDThesis`
     * *Scenario analysis and storage needs*: see for the main study :cite:t:`Limpens2019` and :cite:t:`Limpens_role_2019` for a specific study on the storage.
-    * *Role of the grid infrastructure in the transition*: see :cite:t:`schnidrig2023role`.
-    * *Carbon flow of an independent and carbon neutral Switzerland*: see :cite:t:`li2020decarbonization`.
-    * *Dynamic optimisation of the transition*: see :cite:t:`li2020decarbonization`.
-
+  
 - Belgium:
   
     * *Scenarios analysis*: see :cite:t:`Limpens_belgian_2020` who analysed different scenarios to reduce greenhouse gases emissions.
-    * *Uncertainty*: see :cite:t:`limpens2020impact` for the elaboration of the methodology to the Belgium case (using a novel methodology), see :cite:t:`rixhon2021role` for a specific study on electro-fuels and see :cite:t:`limpens2020impact,Limpens2021thesis` for an updated study on the Belgian case.
-
+    * *Uncertainty*: see :cite:t:`limpens2020impact` for the elaboration of the methodology to the Belgium case (using a novel methodology), see :cite:t:`rixhon2021role` for a specific study on electro-fuels and see :cite:t:`limpens2021generating` for an updated study on the Belgian case.
+    * *Pathways analysis*: see :cite:t:`limpens2021generating` who investigate several pathways including an uncertainty study of critical parameters.
+  
 - Italy:
   
     * *Scenarios analysis*: see :cite:t:`borasio2022deep` for an exhaustive analysis (per regions and with uncertainty) to reduce the energy system at the horizon of 2050.
@@ -175,7 +141,19 @@ The model has been applied to the following countries:
 - Other countries:
   
     * *European Union countries* see :cite:t:`dommissemodelling` for a data collection and results for 26 european countries.
+    * *Ugandan growth* see :cite:t:`limpens2022competitiveness` who illustrates the energy system of Uganda in 2019 and investigate different growth based on fossil or renewable energies.
+    * *
+
+
+Current developments:
+=====================
+
+- Pathway: Myopic optimisation
   
+- Multi-cells: work on the selection of typical days and application to a larger region.
+  
+- Multi-criteria: Use of additional criteria (Global warming potential, energy embodied, ...), see :cite:t:`muyldermans2021multicriteria`
 
+- Coupling with other models: dispatch model (Dispa-SET) and economic model (GEMMES).
 
-
+- (And also works from Stefano and EPFL)

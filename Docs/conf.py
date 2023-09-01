@@ -30,7 +30,9 @@ release = '2.2'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [ 'sphinxcontrib.bibtex'
+extensions = [ 'sphinxcontrib.bibtex',
+               'nbsphinx',
+               'sphinx_design'
 ]
 # Bibliography:
 bibtex_bibfiles = ['refs.bib']
@@ -64,3 +66,8 @@ html_static_path = []
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
 html_logo = 'images/estd_graphical_abstract.png'
+
+# To add interactive maps:
+nbsphinx_custom_formats = {
+    ".md": ["jupytext.reads", {"fmt": "mystnb"}],
+}
