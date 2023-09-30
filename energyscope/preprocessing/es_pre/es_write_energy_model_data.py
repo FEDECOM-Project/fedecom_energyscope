@@ -125,7 +125,7 @@ def print_data(config):
         END_USES_CATEGORIES = list(end_uses_categories.loc[:, 'END_USES_CATEGORIES'].unique())
         RESOURCES = list(resources_simple.index)
         RES_IMPORT_CONSTANT = ['GAS', 'GAS_RE', 'H2_RE', 'H2']  # TODO automatise
-        BIOFUELS = list(resources[resources.loc[:, 'Subcategory'] == 'Biofuel'].index)
+        RE_FUELS = list(resources[resources.loc[:, 'Subcategory'] == 'Renewable fuel'].index)
         RE_RESOURCES = list(
             resources.loc[(resources['Category'] == 'Renewable'), :].index)
         EXPORT = list(resources.loc[resources['Category'] == 'Export', :].index)
@@ -221,7 +221,7 @@ def print_data(config):
         print_set(END_USES_CATEGORIES, 'END_USES_CATEGORIES', out_path)
         print_set(RESOURCES, 'RESOURCES', out_path)
         print_set(RES_IMPORT_CONSTANT, 'RES_IMPORT_CONSTANT', out_path)
-        print_set(BIOFUELS, 'BIOFUELS', out_path)
+        print_set(RE_FUELS, 'RE_FUELS', out_path)
         print_set(RE_RESOURCES, 'RE_RESOURCES', out_path)
         print_set(EXPORT, 'EXPORT', out_path)
         newline(out_path)
@@ -446,7 +446,10 @@ def print_data(config):
         # COMPUTE peak_sc_factor #
         max_sc_td = td_ts.loc[:, 'SPACE_COOLING'].max() # Check here names
         max_sc_all = time_series.loc[:, 'SPACE_COOLING'].max() # Check here names
-        peak_sc_factor = max_sc_all / max_sc_td
+        if max_sc_td == 0: # In case no Space cooling is set, demand can be = 0. This exception is treated here
+            peak_sc_factor = 1
+        else:
+            peak_sc_factor = max_sc_all / max_sc_td
 
         # PRINTING #
         # printing description of file

@@ -108,6 +108,7 @@ def plot_layer_elec_td(layer_elec: pd.DataFrame, title='Layer electricity', tds 
     if reorder_elec is None:
         reorder_elec = elec_order_graphs
     # reorder the columns for the plot
+    print(reorder_elec)
     plotdata = plotdata[reorder_elec]
     # Grouping some tech for plot readability
         # Public mobility

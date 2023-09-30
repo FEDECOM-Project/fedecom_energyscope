@@ -50,7 +50,8 @@ if __name__ == '__main__':
     fig3, ax3 = es.plot_barh(elec_assets[['f']], title='Electricity assets [GW_e]',
                              x_label='Installed capacity [GW_e]')
     # layer_ELECTRICITY for the 12 tds
-    elec_layer_plot = es.plot_layer_elec_td(outputs['layer_ELECTRICITY'])
+    # elec_layer_plot = es.plot_layer_elec_td(outputs['layer_ELECTRICITY'])
+    fig,ax = es.hourly_plot(plotdata=outputs['layer_ELECTRICITY'], nbr_tds=12)
     # layer_HEAT_LOW_T_DECEN for the 12 tds
     fig,ax = es.hourly_plot(plotdata=outputs['layer_HEAT_LOW_T_DECEN'], nbr_tds=12)
     

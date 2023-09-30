@@ -14,8 +14,9 @@ elec_order_graphs = ['IND_COGEN_GAS', 'IND_COGEN_WOOD', 'IND_COGEN_WASTE',
                 'DHN_COGEN_GAS', 'DHN_COGEN_WOOD', 'DHN_COGEN_WASTE', 'DHN_COGEN_WET_BIOMASS',
                 'DHN_COGEN_BIO_HYDROLYSIS',
                 'DEC_COGEN_GAS', 'DEC_COGEN_OIL', 'DEC_ADVCOGEN_GAS', 'DEC_ADVCOGEN_H2',
-                'CCGT',
-                'PV', 'WIND_ONSHORE', 'WIND_OFFSHORE', 'HYDRO_RIVER',
+                'NUCLEAR', 'CCGT', 'CCGT_AMMONIA', 'COAL_US', 'COAL_IGCC',
+                'PV_ROOFTOP', 'PV_UTILITY', 'WIND_ONSHORE', 'WIND_OFFSHORE', 'HYDRO_RIVER', 'HYDRO_DAM', 'HYDRO_RIVER',
+                'PT_POWER_BLOCK', 'ST_POWER_BLOCK', 'TIDAL', 'WAVE', 'GEOTHERMAL',
                 'BIOMASS_TO_METHANOL', 'BIO_HYDROLYSIS', 'PYROLYSIS_TO_LFO', 'PYROLYSIS_TO_FUELS',
                 'ELECTRICITY',
                 'PHS_Pout', 'BATT_LI_Pout', 'BEV_BATT_Pout', 'PHEV_BATT_Pout',
@@ -23,8 +24,8 @@ elec_order_graphs = ['IND_COGEN_GAS', 'IND_COGEN_WOOD', 'IND_COGEN_WASTE',
                 'TRAMWAY_TROLLEY', 'TRAIN_PUB', 'CAR_PHEV', 'CAR_BEV', 'TRAIN_FREIGHT', 'TRUCK_ELEC',
                 'HABER_BOSCH', 'SYN_METHANOLATION', 'OIL_TO_HVC', 'GAS_TO_HVC', 'BIOMASS_TO_HVC', 'ATM_CCS',
                 'INDUSTRY_CCS',
-                'DHN_HP_ELEC', 'DEC_HP_ELEC', 'DEC_DIRECT_ELEC',
-                'IND_DIRECT_ELEC', 'H2_ELECTROLYSIS', 'PHS_Pin', 'BATT_LI_Pin', 'BEV_BATT_Pin', 'PHEV_BATT_Pin',
+                'DHN_HP_ELEC', 'DEC_HP_ELEC', 'DEC_DIRECT_ELEC', 'DEC_ELEC_COLD',
+                'IND_DIRECT_ELEC', 'IND_ELEC_COLD',  'H2_ELECTROLYSIS', 'PHS_Pin', 'BATT_LI_Pin', 'BEV_BATT_Pin', 'PHEV_BATT_Pin',
                 'ELEC_EXPORT']
 
 # dictionnary to map the names of the resources and technologies into the model into a format to be plotted
@@ -111,8 +112,10 @@ plotting_names = {'ELECTRICITY': 'Electricity',
 
 # dictionnary specifying the colors of the different technologies for plot of the elec layer
 colors_elec = {'Ind. cogen. gas': '#DC143C', # Heat HT in sankey
+               'Nuclear': '##FFC0CB', # Nuclear in sankey
                'CCGT': '#FFD700', # Gas in sankey
-               'PV': '#FFFF00', # Solar in sankey
+               'PV_ROOFTOP': '#FFFF00', # Solar in sankey
+               'PV_UTILITY': '#FFFF00', # Solar in sankey
                'Wind onshore': '#00B050', # Light green
                'Wind offshore': '#548235', # Darker green
                'Other prod.': '#a85432', # Red-brown
