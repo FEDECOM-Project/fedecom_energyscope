@@ -9,7 +9,7 @@ Category;Subcategory;Technologies name;Technologies param;c_inv;c_maint;gwp_cons
 [ktonCO2_eq/GWh]
 [ktonCO2_eq/(Mkmpass/h)]
 [ktonCO2_eq/(Mtonkm/h)]";[years];[];[];[];[GW];[GW];
-Electricity;Electricity;Nuclear;NUCLEAR;4845.73;102.930986;707.88;60;0.85;0;1;0;2;
+Electricity;Electricity;Nuclear;NUCLEAR;4845.73;102.930986;707.88;60;0.85;0;1;0;0;
 Electricity;Electricity;Combined cycle gas turbine;CCGT;825.96;19.73031183;183.79;25;0.955769231;0;1;0;1.00E+15;
 Electricity;Electricity;Amonia combined cycle gas turbine;CCGT_AMMONIA ;825.96;19.55202588;183.79;25;0.59;0;1;0;1.00E+15;
 Electricity;Electricity;Ultra-supercritical coal power plant;COAL_US;2598.77;29.70315573;331.6;35;0.862792;0;1;0;0;
@@ -108,7 +108,7 @@ Synthetic fuels;Synthetic fuels;Gas to HVC;GAS_TO_HVC ;907.75;19.93997837;0;25;0
 Synthetic fuels;Synthetic fuels;Biomass to HVC;BIOMASS_TO_HVC ;3311.7;52;0;20;0.994;0;1;0;1.00E+15;HVC
 Synthetic fuels;Synthetic fuels;Methanol to HVC;METHANOL_TO_HVC ;793.49;62.748;0;20;0.994;0;1;0;1.00E+15;HVC
 Storage;Electricity storage;Batteries;BATT_LI;501.3;0.62;61.3;15;1;0;1;0;1.00E+15;
-Storage;Electricity storage;Compressed air energy storage;CAES;38.938;3.1799;0;50;1;0;1;0;1.00E+15;
+Storage;Electricity storage;Compressed air energy storage;CAES;38.938;3.1799;0;50;1;0;1;0;0;
 Storage;Electricity storage;Batteries of electric cars;BEV_BATT;0;0;0;1;1;0;1;0;1.00E+15;
 Storage;Electricity storage;Batteries of plug-in hybrid cars;PHEV_BATT;0;0;0;1;1;0;1;0;1.00E+15;
 Storage;Electricity storage;Hydro dam storage;DAM_STORAGE;0;0;0;1;1;0;1;0;8.97E+03;

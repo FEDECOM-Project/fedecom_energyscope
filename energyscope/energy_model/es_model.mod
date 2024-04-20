@@ -413,7 +413,7 @@ subject to peak_space_cooling {j in TECHNOLOGIES_OF_END_USES_TYPE["SPACE_COOLING
 
 # [Eq. 2.34]  constraint to reduce the GWP subject to Minimum_gwp_reduction :
 subject to Minimum_GWP_reduction :
-	TotalGWP <= gwp_limit;
+	TotalGWP = gwp_limit;
 
 # [Eq. 2.35] Minimum share of RE in primary energy supply
 subject to Minimum_RE_share :

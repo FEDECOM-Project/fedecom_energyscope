@@ -258,9 +258,14 @@ if sum {t in PERIODS, h in HOUR_OF_PERIOD[t], td in TYPICAL_DAY_OF_PERIOD[t]} (F
         # SNG use:
  # Storage?
 if F ["GAS_STORAGE"] > 0.001 then {
-        printf "%s,%s,%.2f,%s,%s,%s\n", "Imp. Gas" , "Gas sto.", sum{t in PERIODS, h in HOUR_OF_PERIOD[t], td in
-        TYPICAL_DAY_OF_PERIOD[t]}(Storage_in["GAS_STORAGE", "GAS", h, td]  ) / 1000 ,
+        printf "%s,%s,%.2f,%s,%s,%s\n", "Imp. Gas RE" , "Gas sto.", sum{t in PERIODS, h in HOUR_OF_PERIOD[t], td in
+        TYPICAL_DAY_OF_PERIOD[t]}(Storage_in["GAS_STORAGE", "GAS", h, td]  ) / 1000 * sum{t2 in PERIODS, h2 in HOUR_OF_PERIOD[t2], td2 in TYPICAL_DAY_OF_PERIOD[t2]} (F_t ["GAS_RE", h2, td2]    * t_op [h2, td2]) / sum{t3 in PERIODS, h3 in HOUR_OF_PERIOD[t3], td3 in TYPICAL_DAY_OF_PERIOD[t3]} ((F_t ["GAS_RE", h3, td3]+F_t ["GAS", h3, td3]) * t_op [h3, td3]) ,
         "GAS", "#FFD700", "TWh" >> (PathName & "/sankey/input2sankey.csv");
+
+        printf "%s,%s,%.2f,%s,%s,%s\n", "Imp. Gas" , "Gas sto.", sum{t in PERIODS, h in HOUR_OF_PERIOD[t], td in
+        TYPICAL_DAY_OF_PERIOD[t]}(Storage_in["GAS_STORAGE", "GAS", h, td]  ) / 1000 * sum{t2 in PERIODS, h2 in HOUR_OF_PERIOD[t2], td2 in TYPICAL_DAY_OF_PERIOD[t2]} (F_t ["GAS", h2, td2] * t_op [h2, td2]) / sum{t3 in PERIODS, h3 in HOUR_OF_PERIOD[t3], td3 in TYPICAL_DAY_OF_PERIOD[t3]} ((F_t ["GAS_RE", h3, td3]+F_t ["GAS", h3, td3]) * t_op [h3, td3]) ,
+        "GAS", "#FFD700", "TWh" >> (PathName & "/sankey/input2sankey.csv");
+
         printf "%s,%s,%.2f,%s,%s,%s\n", "Gas sto." , "Gas", sum{t in PERIODS, h in HOUR_OF_PERIOD[t], td in
         TYPICAL_DAY_OF_PERIOD[t]}(Storage_out["GAS_STORAGE", "GAS", h, td]*storage_eff_out ["GAS_STORAGE","GAS"]  ) / 1000 ,
         "GAS", "#FFD700", "TWh" >> (PathName & "/sankey/input2sankey.csv");
