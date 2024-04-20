@@ -1,0 +1,69 @@
+source,target,realValue,layerID,layerColor,layerUnit
+Imp. Ammonia RE,Ammonia,9.42,Ammonia,#000ECD,TWh
+Ammonia,Non-energy demand,9.42,Ammonia,#000ECD,TWh
+Gas,Methane-to-Methanol,2.16,Gas,#FFD700,TWh
+Methane-to-Methanol,Methanol,1.42,Methanol,#CC0066,TWh
+Methanol,Non-energy demand,1.42,Methanol,#CC0066,TWh
+Oil,NSC,2.17,Naphtha,#8B008B,TWh
+Elec,NSC,0.03,Electricity,#00BFFF,TWh
+Heat HT,NSC,0.02,Heat HT,#DC143C,TWh
+NSC,HVC,1.19,HVC,#00FFFF,TWh
+Wood,Gasifi. to HVC,88.00,Wood,#CD853F,TWh
+Elec,Gasifi. to HVC,1.06,Electricity,#00BFFF,TWh
+Heat HT,Gasifi. to HVC,1.92,Heat HT,#DC143C,TWh
+Gasifi. to HVC,HVC,36.96,HVC,#00FFFF,TWh
+HVC,Non-energy demand,38.15,HVC,#00FFFF,TWh
+Imp. Diesel,Diesel,43.87,Diesel,#D3D3D3,TWh
+Diesel,Mob public,43.87,Diesel,#D3D3D3,TWh
+Imp. Gas,Gas,146.31,Gas,#FFD700,TWh
+Imp. Gas RE,Gas sto.,0.00,GAS,#FFD700,TWh
+Imp. Gas,Gas sto.,41.08,GAS,#FFD700,TWh
+Gas sto.,Gas,40.26,GAS,#FFD700,TWh
+Gas,Freight,133.12,GAS,#FFD700,TWh
+Gas,Elec,48.97,GAS,#FFD700,TWh
+Gas,refrig. cycles,14.84,GAS,#FFD700,TWh
+Electricity,Elec,8.60,Electricity,#00BFFF,TWh
+Wind,Elec,219.25,Wind,#27AE34,TWh
+Hydro River,Elec,7.33,Hydro River,#0000FF,TWh
+Hydro Dams,Elec,8.25,Hydro Dam,#0000FF,TWh
+Coal,Boilers,35.00,Coal,#A0522D,TWh
+Solar,Elec,11.10,Solar,#FFFF00,TWh
+Solar,Elec,185.92,Solar,#FFFF00,TWh
+Solar,CSP,45.91,Solar,#FFFF00,TWh
+CSP,Elec,20.67,Solar,#FFFF00,TWh
+CSP,Elec,0.00,Solar,#FFFF00,TWh
+Waste,Boilers,38.20,Waste,#808000,TWh
+Imp. Oil,Oil,2.17,Oil,#8B008B,TWh
+Wood,Boilers,11.91,Wood,#CD853F,TWh
+Wet biomass,Biomethanation,41.21,Wood,#CD853F,TWh
+Biomethanation,Gas,12.32,GAS,#FFD700,TWh
+Elec,Mob priv,53.21,Electricity,#00BFFF,TWh
+Elec,Mob public,10.71,Electricity,#00BFFF,TWh
+Elec,Freight,5.14,Electricity,#00BFFF,TWh
+Elec,Exp & Loss,22.91,Electricity,#00BFFF,TWh
+Elec,Curt.,2.05,Electricity,#00BFFF,TWh
+Elec,Elec demand,108.47,Electricity,#00BFFF,TWh
+Solar,Curt.,3.52,Solar,#FFFF00,TWh
+Wind,Curt.,2.61,Wind,#27AE34,TWh
+Elec,Storage,27.48,Electricity,#00BFFF,TWh
+Storage,Elec demand,21.41,Electricity,#00BFFF,TWh
+Elec,HPs,76.64,Electricity,#00BFFF,TWh
+Elec,refrig. cycles,80.79,Electricity,#00BFFF,TWh
+Elec,Dec. sto,19.90,Electricity,#00BFFF,TWh
+Elec,Heat LT Dec,4.69,Electricity,#00BFFF,TWh
+Elec,Heat HT,67.23,Electricity,#00BFFF,TWh
+H2 prod,H2 sto.,0.00,H2,#FF00FF,TWh
+H2 sto.,H2,0.00,H2,#FF00FF,TWh
+H2 prod,H2,0.00,H2,#FF00FF,TWh
+HPs,Dec. sto,60.48,Heat LT,#FA8072,TWh
+HPs,Heat LT Dec,106.64,Heat LT,#FA8072,TWh
+HPs,DHN,83.74,Heat LT,#FA8072,TWh
+refrig. cycles,COLD_HIGH_T_SC,207.80,SPACE_COOLING,#FA8072,TWh
+refrig. cycles,PROCESS_COOLING,12.05,PROCESS_COOLING,#FA8072,TWh
+Dec. sto,Heat LT Dec,71.54,Heat LT,#FA8072,TWh
+Boilers,Heat HT,70.33,Heat HT,#DC143C,TWh
+DHN,Heat LT DHN,50.16,Heat LT,#FA8072,TWh
+DHN,Loss DHN,4.19,Heat LT,#FA8072,TWh
+DHN,DHN Sto,29.39,Heat LT,#FA8072,TWh
+DHN Sto,Heat LT DHN,28.21,Heat LT,#FA8072,TWh
+Heat HT,Ind Heat Demand,135.61,Heat HT,#DC143C,TWh
